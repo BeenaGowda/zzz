@@ -6,5 +6,6 @@ public class zzz {
 	{
 		System.out.println("aaa");
 		//pushhhh
+		//pushhh1
 	}
 }
