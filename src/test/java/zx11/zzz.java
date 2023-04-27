@@ -14,23 +14,30 @@ public class zzz {
 	@Test
 	public void m1()
 	{
-		WebDriver driver=null;
-		String BROWSER = System.getProperty("browser");
-		String URL = System.getProperty("url");
-		System.out.println(BROWSER);
+		WebDriver driver = null;
+				PU plib=new PU();
+				String BROWSER = plib.getKeyValue("browser");
+				String URL = plib.getKeyValue("url");
+				
+				
+				
+				
+				//System.out.println(BROWSER);
+				
+				
+				if(BROWSER.equalsIgnoreCase("chrome"))
+				{
+					WebDriverManager.chromedriver().setup();
+					driver=new ChromeDriver();
+				}
+				else if(BROWSER.equalsIgnoreCase("firefox"))
+				{
+					WebDriverManager.firefoxdriver().setup();
+					driver=new EdgeDriver();
+				}
+				
+				driver.get(URL);
 		
-		if(BROWSER.equalsIgnoreCase("browser"))
-		{
-			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
-		}
-		else if(BROWSER.equalsIgnoreCase("firefox"))
-		{
-			WebDriverManager.edgedriver().setup();
-			driver=new FirefoxDriver();
-		}
-		
-		driver.get(URL);
 		//push jenkins
 	}
 }
